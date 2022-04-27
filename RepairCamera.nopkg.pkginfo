@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>OnDemand</key>
+	<true/>
+	<key>_metadata</key>
+	<dict>
+		<key>created_by</key>
+		<string>oem</string>
+		<key>creation_date</key>
+		<date>2019-11-26T09:37:06Z</date>
+		<key>munki_version</key>
+		<string>3.6.4.3786</string>
+		<key>os_version</key>
+		<string>10.12.6</string>
+	</dict>
+	<key>autoremove</key>
+	<false/>
+	<key>catalogs</key>
+	<array>
+		<string>production</string>
+	</array>
+	<key>category</key>
+	<string>ServiceIT</string>
+	<key>description</key>
+	<string>On Demand Script. Reparer la camera.</string>
+	<key>developer</key>
+	<string>Service IT</string>
+	<key>display_name</key>
+	<string>RepairCamera</string>
+	<key>installer_type</key>
+	<string>nopkg</string>
+	<key>minimum_os_version</key>
+	<string>10.4.0</string>
+	<key>name</key>
+	<string>RepairCamera</string>
+	<key>postinstall_script</key>
+	<string>#!/bin/bash
+# oem 20191126 - v0.1
+#killall cmd
+killall VDCAssistant
+killall AppleCameraAssistant
+
+exit 0
+
+<key>preinstall_alert</key>
+	<dict>
+		<key>alert_detail</key>
+		<string>Si la camera ne fonctionne plus, ceci devrait faire un reset.</string>
+		<key>alert_title</key>
+		<string>Réparer Camera</string>
+		<key>cancel_label</key>
+		<string>Annuler</string>
+		<key>ok_label</key>
+		<string>Just Do it</string>
+	</dict>
+	<key>version</key>
+	<string>0.1</string>
+</dict>
+</plist>
